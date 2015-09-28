@@ -36,11 +36,6 @@ body {
     text-shadow: 2px 2px black;  
 }
 
-.btn-lg {
-    background-color: #DEE2E3;
-    color: #DEE2E3;
-}
-
 .col-md-4 h2 {
     color: #EB3333;/*red*/ 
     font-weight: 500; 
