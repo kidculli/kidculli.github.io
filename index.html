@@ -1,0 +1,143 @@
+<!doctype html>
+<!--
+    File: http://weblab.cs.uml.edu/~clam/index.html
+    Author: Cullin Lam cullin_lam@student.uml.edu
+    UMass Lowell 91.461 GUI Programming I
+    created on: 2015-09-08
+
+    This page serves as an index to my future web assignments for 91.461.
+    Assignment:  Creating Your First Web Page
+
+    updated on: 2015-09-21
+        - Replaced text inside col-md-4 with information for assignment 3. 
+          Added span class "Due" for Due Date in col-md-4
+
+    updated on: 2015-09-09
+        -Added additional documentation & deleted unnecessary tag elements
+-->
+
+    <!-- Page head. CSS source is set here which was already specified by bootstrap
+    JavaScript library is also loaded here. -->
+    <head>
+        <meta charset="utf-8">
+        <title>Cullin's Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!-- I commented out this navigation bar feature because it is not yet needed -->
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<!--    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div>/.navbar-collapse
+      </div>
+    </nav>-->
+
+    <!-- Main jumbotron for a primary marketing message or call to action.
+    Introduces myself and what the page is  about as well as advertise my club.-->
+    <div class="jumbotron">
+      <div class="container">
+          <h1> Welcome to my page! </h1>
+        <p>Hello! My name is Cullin Lam. I am a senior here at Umass Lowell, pursuing a B.S. in
+            Biology and Computer Science. This webpage serves as the index for all of the web pages I
+            will be creating for 91.461 GUI Programming I. I am the founder and president of the <strong>Umass Lowell Urban
+                Choreography Club</strong>. </p>
+        <p><a class="btn btn-primary btn-lg" href="http://facebook.com/umlurbanchoreo" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <!-- Container that appears at the bottom of the page which includes each assignment and its
+        description as well as a link to it if applicable. -->
+    <div class="container">
+      <!-- Each element in this class will be displayed as a row -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Assignment #1:Setting Up to Take This Course</h2>
+          <p><span class="Due">Date Due:  Thursday, September 3, 2015</span><br>The objective of this assignment was to get a webserver up and running on
+          our local machines for developing web pages. OSX already comes with a web development
+          stack right out the box so I did not need to install any software. I configured
+          my weblab.cs.uml.edu public_html directory. </p>
+
+        </div>
+        <div class="col-md-4">
+          <h2>Assignment #2: Creating Your First Web Page</h2>
+          <p><span class="Due">Date Due: Thursday, September 10, 2015</span><br> You are looking right at it! This is
+          my first web page. I decided to use Bootstrap to style my page because it was something
+          my group used to make web pages at my previous CO-OP experience. If you click the
+          button below you will be redirected back to this page. </p>
+          <!-- I got the onclick function to reload the page from this http://stackoverflow.com/questions/10961010/how-to-refresh-page-with-a-href-in-firefox -->
+          <p><a class="btn btn-default" href="#" role="button" onclick='location.reload(true); return false;'>View Page &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Assignment #3: Styling Your First Web Page With CSS</h2>
+          <p><span class="Due">Date Due: Tuesday, September 22, 2015</span><br> The goal of this assignment was to 
+          use our new found knowledge of css to style our index.html pages. At first I didn't
+          know how to extend bootstrap with my own css until a classmate Santiago
+          Paredes showed me an example of how he extended bootstrap with his own style sheets.
+          Using what I had learned, I was able to add more style to this page than what the 
+          default bootstrap had to offer.</p>
+        </div>
+      </div>
+    </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Cullin Lam 2015</p>
+      </footer>
+
+      <!-- Loads necessary jquery library -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>');</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments);});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r);}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
