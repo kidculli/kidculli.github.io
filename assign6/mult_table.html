@@ -1,0 +1,94 @@
+<!--
+Author: Cullin Lam
+Created: 2015-10-19
+Updated:
+
+This file presents to the user a form that asks for number of rows and columns to display on
+the multiplication table
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 6</title>
+</head>
+<body>
+<!-- Prevents form from reloading page when submit is clicked source: http://stackoverflow.com/questions/1818249/form-with-no-action-and-where-enter-does-not-reload-page-->
+<form id="frm1" action="javascript:void(0);">
+    Horizontal Start Number: <input type="text" name="h_start" value="0"><br>
+    Horizontal End Number: <input type="text" name="h_end" value="0"><br><br>
+    Vertical Start Number: <input type="text" name="v_start" value="0"><br>
+    Vertical End Number: <input type="text" name="v_end" value="0"><br>
+    <input type="submit" value="Submit" onclick="genTable()">
+</form>
+
+<p>Enter 4 numbers to generate a multiplication table!</p>
+
+
+    <table id="dynamic"></table>
+    <p id="message"></p>
+
+
+<script>
+    "use strict";
+    var validate = function() {
+//        var x = document.getElementById("frm1");
+//        // save input from form into appropriate vars
+//        var h_start = x.elements[0].value;
+//        var h_end = x.elements [1].value;
+//        var v_start = x.elements[2].value;
+//        var v_end = x.elements[3].value;
+//        var i;
+//        for (i in x.elements)
+        console.log("validating");
+        if (h_end==='' || h_start ===''||v_end===''||v_start==='') {
+            document.getElementById("message").innerText = "Please enter a value";
+        }
+    }
+</script>
+<script>
+    function genTable() {
+        // set x as an
+         x = document.getElementById("frm1");
+        // save input from form into appropriate vars
+         h_start = x.elements[0].value;
+         h_end = x.elements [1].value;
+         v_start = x.elements[2].value;
+         v_end = x.elements[3].value;
+         table_struct ="";
+        var i;
+        var j;
+
+        validate();
+
+        // add multiplication table horizontal header row
+        table_struct += "<tr><th>x</th>";
+        for(i=h_start;i<=h_end;i++)
+        {
+            table_struct += "<th>" + i + "</th>";
+        }
+        table_struct += "</tr>";
+
+        console.log(table_struct);
+
+        console.log(v_start);
+        console.log(h_start);
+        for (j =v_start; j<= v_end; j++) {
+            // add multiplication table vertical header row
+            table_struct += "<tr><th>" + j + "</th>";
+            for (i = h_start; i <= h_end; i++) {
+                table_struct += "<td>" + (i*j) + "</td>";
+            }
+            table_struct+="</tr>";
+        }
+        //table_struct+="</tr>";
+        console.log(table_struct);
+        document.getElementById("dynamic").innerHTML = table_struct;
+
+
+    }
+</script>
+
+</body>
+</html>
