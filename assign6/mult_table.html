@@ -2,7 +2,10 @@
 <!--
 Author: Cullin Lam
 Created: 2015-10-19
-Updated:
+Updated: 2015-10-20
+
+    2015-10-20
+         -Added validate function and additional documentation
 
 This file presents to the user a form that asks for number of rows and columns to display on
 the multiplication table
@@ -25,66 +28,101 @@ the multiplication table
 
 <p>Enter 4 numbers to generate a multiplication table!</p>
 
-
-    <table id="dynamic"></table>
-    <p id="message"></p>
+<table id="dynamic"></table>
+<p id="message"></p>
 
 
 <script>
-    "use strict";
     var validate = function() {
-//        var x = document.getElementById("frm1");
-//        // save input from form into appropriate vars
-//        var h_start = x.elements[0].value;
-//        var h_end = x.elements [1].value;
-//        var v_start = x.elements[2].value;
-//        var v_end = x.elements[3].value;
-//        var i;
-//        for (i in x.elements)
+        /*
+            This function validates input parameters from form: frm1 if there are errors present
+            an error message is constructed.
+        */
+        // debug message
         console.log("validating");
-        if (h_end==='' || h_start ===''||v_end===''||v_start==='') {
-            document.getElementById("message").innerText = "Please enter a value";
+        // string for error message, global so it can be used by genTable()
+        error_message = "";
+        // Check if any values are missing
+        if (h_end === '' || h_start === '' || v_end === '' || v_start === '') {
+            error_message += "You forgot to enter a value!\n";
+            return false;
         }
+        // Check if any values are not numbers
+        if (isNaN(h_end) || isNaN(h_start) || isNaN(v_end) || isNaN(v_start))
+        {
+            error_message += "You didn't enter a valid number!\n";
+            return false;
+        }
+        // Check if horizontal range is valid
+        if(h_end<h_start)
+        {
+            error_message += "Horizontal starting value is greater than ending value!\n";
+            return false;
+        }
+        // Check if vertical range is valid
+        if(v_end<v_start)
+        {
+            error_message += "Vertical starting value is greater than ending value!\n";
+            return false;
+        }
+        return true;
+
     }
-</script>
-<script>
     function genTable() {
-        // set x as an
+        /*
+            This function will generate a dynamic multiplication table if the input parameters are valid
+            else error messages will be displayed.
+         */
+        // set x as DOM object for frm1
          x = document.getElementById("frm1");
-        // save input from form into appropriate vars
+        // save input from form into appropriate vars, global so they can be accessed by the validate function
+        // horizontal start number
          h_start = x.elements[0].value;
+        //horizontal end number
          h_end = x.elements [1].value;
+        //vertical start number
          v_start = x.elements[2].value;
+        //vertical end number
          v_end = x.elements[3].value;
+        // string that will be used to construct table html
          table_struct ="";
+        // local iterators
         var i;
         var j;
 
-        validate();
+        // Clear previous table if exists
+        document.getElementById("dynamic").innerHTML = "";
 
-        // add multiplication table horizontal header row
-        table_struct += "<tr><th>x</th>";
-        for(i=h_start;i<=h_end;i++)
-        {
-            table_struct += "<th>" + i + "</th>";
-        }
-        table_struct += "</tr>";
-
-        console.log(table_struct);
-
-        console.log(v_start);
-        console.log(h_start);
-        for (j =v_start; j<= v_end; j++) {
-            // add multiplication table vertical header row
-            table_struct += "<tr><th>" + j + "</th>";
+        // construct and display table if input params are valid
+        if(validate()) {
+            // add multiplication table horizontal header row
+            table_struct += "<tr><th>x</th>";
             for (i = h_start; i <= h_end; i++) {
-                table_struct += "<td>" + (i*j) + "</td>";
+                table_struct += "<th>" + i + "</th>";
             }
-            table_struct+="</tr>";
+            table_struct += "</tr>";
+
+            // construct table data rows
+            for (j = v_start; j <= v_end; j++) {
+                // add multiplication table vertical header row
+                table_struct += "<tr><th>" + j + "</th>";
+                for (i = h_start; i <= h_end; i++) {
+                    table_struct += "<td>" + (i * j) + "</td>";
+                }
+                table_struct += "</tr>";
+            }
+            // debug message
+            console.log(table_struct);
+            // set table content
+            document.getElementById("dynamic").innerHTML = table_struct;
+            // set message content
+            document.getElementById("message").innerText = "Success!";
         }
-        //table_struct+="</tr>";
-        console.log(table_struct);
-        document.getElementById("dynamic").innerHTML = table_struct;
+
+        else {
+            // display errors
+            document.getElementById("message").innerText = error_message;
+        }
 
 
     }
