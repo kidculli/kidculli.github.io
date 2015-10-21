@@ -1,0 +1,22 @@
+th {
+    color: orange;
+    background-color: whitesmoke;
+    margin: auto;
+    padding: 5px;
+    border: thin;
+    border-style: solid;
+}
+
+td{
+    /*border-style: dotted;*/
+    font-size: medium;
+    border-bottom: solid 1px;
+    border-right: solid 1px;
+    background-color: lavender;
+    color: cornflowerblue;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -15,6 +15,7 @@ the multiplication table
 <head>
     <meta charset="UTF-8">
     <title>Assignment 6</title>
+    <link rel="stylesheet" type="text/css" href="css/dynamic_table.css">
 </head>
 <body>
 <!-- Prevents form from reloading page when submit is clicked source: http://stackoverflow.com/questions/1818249/form-with-no-action-and-where-enter-does-not-reload-page-->
@@ -40,6 +41,10 @@ the multiplication table
         */
         // debug message
         console.log("validating");
+        console.log(h_start);
+        console.log(h_end);
+        console.log(v_start);
+        console.log(v_end);
         // string for error message, global so it can be used by genTable()
         error_message = "";
         // Check if any values are missing
@@ -68,6 +73,8 @@ the multiplication table
         return true;
 
     }
+</script>
+<script>
     function genTable() {
         /*
             This function will generate a dynamic multiplication table if the input parameters are valid
@@ -90,11 +97,17 @@ the multiplication table
         var i;
         var j;
 
+        //debug
+        console.log(h_start);
+        console.log(h_end);
+        console.log(v_start);
+        console.log(v_end);
+
         // Clear previous table if exists
         document.getElementById("dynamic").innerHTML = "";
 
         // construct and display table if input params are valid
-        if(validate()) {
+        if(validate()===true) {
             // add multiplication table horizontal header row
             table_struct += "<tr><th>x</th>";
             for (i = h_start; i <= h_end; i++) {
