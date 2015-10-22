@@ -28,9 +28,9 @@ the multiplication table
 </form>
 
 <p>Enter 4 numbers to generate a multiplication table!</p>
-
-<table id="dynamic"></table>
 <p id="message"></p>
+<table id="dynamic"></table>
+
 
 
 <script>
@@ -50,24 +50,25 @@ the multiplication table
         // Check if any values are missing
         if (h_end === '' || h_start === '' || v_end === '' || v_start === '') {
             error_message += "You forgot to enter a value!\n";
-            return false;
         }
         // Check if any values are not numbers
         if (isNaN(h_end) || isNaN(h_start) || isNaN(v_end) || isNaN(v_start))
         {
             error_message += "You didn't enter a valid number!\n";
-            return false;
         }
         // Check if horizontal range is valid
         if(h_end<h_start)
         {
             error_message += "Horizontal starting value is greater than ending value!\n";
-            return false;
         }
         // Check if vertical range is valid
         if(v_end<v_start)
         {
             error_message += "Vertical starting value is greater than ending value!\n";
+        }
+        // If an error message was constructed return false
+        if (error_message!="")
+        {
             return false;
         }
         return true;
