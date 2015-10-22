@@ -29,7 +29,6 @@ table{
 }
 
 form {
-    /*padding: 100px 844px;*/
     margin-left: auto;
     margin-right: auto;
     color: cornflowerblue;
@@ -38,6 +37,5 @@ form {
     width: 200%;
 }
 p {
-    /*padding: 25px 844px;*/
     margin: 10px;
 }
