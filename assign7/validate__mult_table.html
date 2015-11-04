@@ -74,7 +74,7 @@
             $.validator.addMethod("lessThan",
                     function (value, element, param) {
                         var $otherElement = $(param);
-                        return parseInt(value, 10) < parseInt($otherElement.val(), 10);
+                        return parseInt(value, 10) <= parseInt($otherElement.val(), 10);
                     },"Starting value is greater than ending value");
 
             $("#frm1").validate({
