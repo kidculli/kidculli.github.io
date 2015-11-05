@@ -1,8 +1,13 @@
 /*
 Author: Cullin Lam clam@cs.uml.edu
 Created: 2015-11-02
-Updated: 2015-11-03
-    -Added red color to error class messages
+Updated:
+
+    2015-11-04
+        - Changed .error selector to label selector to style only error messages
+
+    2015-11-03
+        -Added red color to error class messages
 
  This stylesheet styles validate__mult_table.html
 */
@@ -39,8 +44,10 @@ form {
 p {
     margin: 10px;
 }
-
-.error {
+/*
+    Style the error messages
+*/
+label {
     color:red;
     font-style: italic;
 }
