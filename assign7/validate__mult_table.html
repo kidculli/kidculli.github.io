@@ -41,8 +41,8 @@
         Vertical End Number: <input type="text" name="v_end" id="v_end" value="0"><br>
         <label for="v_end" class="error"></label>
     </p>
-
-    <input type="submit" value="Submit" onclick="genTable()">
+    <!-- onclick if the frm1 is valid, generate mult table otherwise return false -->
+    <input id="submit_btn" type="submit" value="Submit" onclick="if($('#frm1').valid()){genTable()}else{return false;}">
 
 </form>
 

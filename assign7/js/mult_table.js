@@ -2,30 +2,37 @@
  * Created by Cullin Lam clam@cs.uml.edu
  * on 11/3/15.
  *
- * Updated on 11/4/15
- *  - Added document ready function call to this js file from html
+ * Last Updated on 11/5/15
+ *
+ *    11/5/15
+ *      - Changed variables in genTable to be local instead of global
+ *
+ *    11/4/15
+ *      - Added document ready function call to this js file from html
+ *
+ *
  *
  *  This file holds all Javascript that runs the dynamic multiplication table
  *  found on kidculli.github.io/assign7/validate__mult_table.html
  */
 function genTable() {
     /*
-     This function will generate a dynamic multiplication table if the input parameters are valid
-     else error messages will be displayed.
+     This function will generate a dynamic multiplication table using the parameters from frm1 input
      */
+
     // set x as DOM object for frm1
-    x = document.getElementById("frm1");
-    // save input from form into appropriate vars, global so they can be accessed by the validate function
+    var x = document.getElementById("frm1");
+    // save input from form into appropriate vars
     // horizontal start number
-    h_start = x.elements[0].value;
+    var h_start = x.elements[0].value;
     //horizontal end number
-    h_end = x.elements [1].value;
+    var h_end = x.elements [1].value;
     //vertical start number
-    v_start = x.elements[2].value;
+    var v_start = x.elements[2].value;
     //vertical end number
-    v_end = x.elements[3].value;
+    var v_end = x.elements[3].value;
     // string that will be used to construct table html
-    table_struct = "";
+    var table_struct = "";
     // local iterators
     var i;
     var j;
@@ -103,4 +110,4 @@ $(document).ready(function() {
 
     })
 
-})
+});
