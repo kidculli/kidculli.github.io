@@ -106,8 +106,17 @@ $(document).ready(function() {
                 required:true,
                 range:[-1000,1000]
             }
-        }
+        }, // end of rules
 
-    })
+        // custom error messages
+        messages: {
+            h_start: {
+                lessThan: "Horizontal starting value is greater than horizontal ending value"
+            },
+            v_start: {
+                lessThan: "Vertical staring value is greater than vertical ending value"
+            }
+        } // end messages
+    }); //end validate
 
 });

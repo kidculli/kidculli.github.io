@@ -42,6 +42,7 @@ p {
 
 .error {
     color:red;
+    font-style: italic;
 }
 
 input[value="Submit"] {
