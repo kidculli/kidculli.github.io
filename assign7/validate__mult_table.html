@@ -1,136 +1,49 @@
 <!DOCTYPE html>
+<!--
+    Author: Cullin Lam clam@cs.uml.edu
+    Created: 2015-11-03
+    Updated: 2015-11-04
+            2015-11-04
+                - Moved all JavaScript to mult_Table.js file
+
+    This web page is the 7th assignment for GUI Programming I COMP 4020 UMass Lowell.
+    It presents to the user a form which asks for 4 parameters and will generate a multiplication table based on
+    the given parameters. JQuery Validation plugin in is used to validate form input.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/assign_7.css">
     <script src=js/jquery.js></script>
-
+    <!--  CDN for Jquery Validation plugin -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"
             type="text/javascript"></script>
+    <!-- Load local Javascript File -->
     <script src="js/mult_table.js"></script>
     <title>Assignment 7 JQuery Validation</title>
-    <script>
-
-        function genTable() {
-            /*
-             This function will generate a dynamic multiplication table if the input parameters are valid
-             else error messages will be displayed.
-             */
-            // set x as DOM object for frm1
-            x = document.getElementById("frm1");
-            // save input from form into appropriate vars, global so they can be accessed by the validate function
-            // horizontal start number
-            h_start = x.elements[0].value;
-            //horizontal end number
-            h_end = x.elements [1].value;
-            //vertical start number
-            v_start = x.elements[2].value;
-            //vertical end number
-            v_end = x.elements[3].value;
-            // string that will be used to construct table html
-            table_struct = "";
-            // local iterators
-            var i;
-            var j;
-
-            //debug
-            console.log(h_start);
-            console.log(h_end);
-            console.log(v_start);
-            console.log(v_end);
-
-            // Clear previous table if exists
-            document.getElementById("dynamic").innerHTML = "";
-
-            // construct and display table if input params are valid
-
-            // add multiplication table horizontal header row
-            table_struct += "<tr><th>x</th>";
-            for (i = h_start; i <= h_end; i++) {
-                table_struct += "<th>" + i + "</th>";
-            }
-            table_struct += "</tr>";
-
-            // construct table data rows
-            for (j = v_start; j <= v_end; j++) {
-                // add multiplication table vertical header row
-                table_struct += "<tr><th>" + j + "</th>";
-                for (i = h_start; i <= h_end; i++) {
-                    table_struct += "<td>" + (i * j) + "</td>";
-                }
-                table_struct += "</tr>";
-            }
-
-            // debug message
-            console.log(table_struct);
-            // set table content
-            document.getElementById("dynamic").innerHTML = table_struct;
-        }
-
-        $(document).ready(function() {
-            // source for this type of method http://stackoverflow.com/questions/29451507/how-to-use-jquery-validator-to-determine-value-of-one-field-is-greater-than-anot
-
-            // add  a validate method that checks if the starting value is greater than the ending value
-            $.validator.addMethod("lessThan",
-                    function (value, element, param) {
-                        var $otherElement = $(param);
-                        return parseInt(value, 10) <= parseInt($otherElement.val(), 10);
-                    },"Starting value is greater than ending value");
-
-            $("#frm1").validate({
-                rules:{
-                    h_start:{
-                        number:true,
-                        range:[-1000,1000],
-                        lessThan:"#h_end"
-                    },
-                    h_end: {
-                        number:true,
-                        range:[-1000,1000]
-                    },
-                    v_start: {
-                        number:true,
-                        range:[-1000,1000],
-                        lessThan:"#v_end"
-                    },
-                    v_end: {
-                        number:true,
-                        range:[-1000,1000]
-                    }
-                }
-
-            })
-
-//            $('#frm1 input').on('keyup blur', function () { // fires on every keyup & blur
-//                if ($('#frm1').valid()) {                   // checks form for validity
-//                    $('button.btn').prop('disabled', false);        // enables button
-//                } else {
-//                    $('button.btn').prop('disabled', 'disabled');   // disables button
-//                }
-//            });
-        })
-    </script>
 </head>
 <body>
 <!-- Prevents form from reloading page when submit is clicked source: http://stackoverflow.com/questions/1818249/form-with-no-action-and-where-enter-does-not-reload-page-->
 <form id="frm1" action="javascript:void(0);">
     <p>
-    Horizontal Start Number: <input type="text" name="h_start" id="h_start" value="0"><br>
-    <label for="h_start" class="error"> </label>
+        Horizontal Start Number: <input type="text" name="h_start" id="h_start" value="0"><br>
+        <label for="h_start" class="error"> </label>
     </p>
     <p>
-    Horizontal End Number: <input type="text" name="h_end" id="h_end" value="0"><br><br>
-    <label for="h_end" class="error"> </label>
+        Horizontal End Number: <input type="text" name="h_end" id="h_end" value="0"><br><br>
+        <label for="h_end" class="error"> </label>
     </p>
     <p>
-    Vertical Start Number: <input type="text" name="v_start" id="v_start" value="0"><br>
-    <label for="v_start" class="error"> </label>
+        Vertical Start Number: <input type="text" name="v_start" id="v_start" value="0"><br>
+        <label for="v_start" class="error"> </label>
     </p>
     <p>
-    Vertical End Number: <input type="text" name="v_end" id="v_end" value="0"><br>
-    <input type="submit" value="Submit" onsubmit="check_param()" onclick="genTable()">
-    <label for="v_end" class="error"></label>
+        Vertical End Number: <input type="text" name="v_end" id="v_end" value="0"><br>
+        <label for="v_end" class="error"></label>
     </p>
+
+    <input type="submit" value="Submit" onclick="genTable()">
+
 </form>
 
 <p>Enter 4 numbers to generate a multiplication table!</p>

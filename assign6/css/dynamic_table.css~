@@ -1,10 +1,10 @@
 /*
 Author: Cullin Lam clam@cs.uml.edu
-Created: 2015-11-02
-Updated: 2015-11-03
-    -Added red color to error class messages
+Created: 2015-10-20
+Updated: 2015-10-20
+    -Added positioning for table and form elements
 
- This stylesheet styles validate__mult_table.html
+ This stylesheet styles mult_table.html
 */
 th {
     color: orange;
@@ -29,6 +29,7 @@ table{
 }
 
 form {
+    /*padding: 100px 844px;*/
     margin-left: auto;
     margin-right: auto;
     color: cornflowerblue;
@@ -37,24 +38,6 @@ form {
     width: 200%;
 }
 p {
+    /*padding: 25px 844px;*/
     margin: 10px;
-}
-
-.error {
-    color:red;
-}
-
-input[value="Submit"] {
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    border-style: dotted;
-    border-radius: 10px;
-    color: cornflowerblue;
-    background-color: orange;
-}
-
-input[value="Submit"]:hover {
-    background-color: cornflowerblue;
-    color: snow;
 }

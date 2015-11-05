@@ -1,5 +1,12 @@
 /**
- * Created by Cullin on 11/3/15.
+ * Created by Cullin Lam clam@cs.uml.edu
+ * on 11/3/15.
+ *
+ * Updated on 11/4/15
+ *  - Added document ready function call to this js file from html
+ *
+ *  This file holds all Javascript that runs the dynamic multiplication table
+ *  found on kidculli.github.io/assign7/validate__mult_table.html
  */
 function genTable() {
     /*
@@ -56,3 +63,44 @@ function genTable() {
     // set table content
     document.getElementById("dynamic").innerHTML = table_struct;
 }
+
+// When page is ready, validation will begin
+$(document).ready(function() {
+    // source for this type of method http://stackoverflow.com/questions/29451507/how-to-use-jquery-validator-to-determine-value-of-one-field-is-greater-than-anot
+
+    // add  a validate method that checks if the starting value is greater than the ending value
+    $.validator.addMethod("lessThan",
+        function (value, element, param) {
+            var $otherElement = $(param);
+            return parseInt(value, 10) <= parseInt($otherElement.val(), 10);
+        },"Starting value is greater than ending value");
+
+    $("#frm1").validate({
+        rules:{
+            h_start:{
+                number:true,
+                required:true,
+                range:[-1000,1000],
+                lessThan:"#h_end"
+            },
+            h_end: {
+                number:true,
+                required:true,
+                range:[-1000,1000]
+            },
+            v_start: {
+                number:true,
+                required:true,
+                range:[-1000,1000],
+                lessThan:"#v_end"
+            },
+            v_end: {
+                number:true,
+                required:true,
+                range:[-1000,1000]
+            }
+        }
+
+    })
+
+})
