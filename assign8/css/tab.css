@@ -1,62 +1,131 @@
 /*
 Author: Cullin Lam clam@cs.uml.edu
 Created: 2015-11-19
-Updated:
+Updated: 2015-11-20
+        - removed nav styles
 
  This stylesheet styles tab_mult_table.html
 */
-th {
-    color: orange;
-    background-color: whitesmoke;
-    margin: auto;
-    padding: 5px;
-    border: thin;
-    border-style: solid;
+
+/*font line and style in side the body*/
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #e2edff;
+    line-height: 1.25;
+    padding: 15px;
 }
 
-td{
-    font-size: medium;
-    border-bottom: solid 1px;
-    border-right: solid 1px;
-    background-color: lavender;
-    color: cornflowerblue;
+/* visited link */
+a:visited {
+    color: purple;
+    text-decoration: underline;
+    text-decoration: overline;
 }
 
-table{
-    margin-left: auto;
-    margin-right: auto;
+
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: underline;
 }
 
-form {
-    margin-left: auto;
-    margin-right: auto;
-    color: cornflowerblue;
-    font-size: 14pt;
-    height: 200%;
-    width: 200%;
+
+/* major header properties */
+.title, .author, .authorsTitle {
+    font-family: Verdana, Helvetica, Arial, sans-serif ;
+    color: blue ;
+    margin: 0 0 0 0 ;
 }
-p {
-    margin: 10px;
-}
-/*
-    Style the error messages
-*/
-label {
-    color:red;
-    font-style: italic;
+/* author's title header refinement */
+.authorsTitle {
+    font-weight: normal ;
+    margin-left: 1.7em ;
 }
 
-input[value="Submit"] {
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    border-style: dotted;
-    border-radius: 10px;
-    color: cornflowerblue;
-    background-color: orange;
+/* minor header properties */
+.location, .locationLabel, .date {
+    color: blue ;
+}
+/* minor header refinements */
+.location, .locationLabel {
+    margin-bottom: 0 ;
+}
+/* additional minor header refinements */
+.locationLabel {
+    font-style : italic ;
+    font-weight: normal ;
+}
+/* additional minor header refinements */
+.location, .date {
+    margin-top: 0 ;
 }
 
-input[value="Submit"]:hover {
-    background-color: cornflowerblue;
-    color: snow;
+/* first letter of main text for Safari and Chrome */
+h3.date + p:first-letter {
+    font-size: 3em ;
+    font-weight: bold ;
+    float: left ;
+    color: red ;
+    margin-right: 1px ;
+    margin-top: -0.15em ;
 }
+
+/* first letter of main text for Firefox */
+h3.date + p.Firefox:first-letter {
+    margin-top: 0.15em ;
+}
+
+/*reuse code from JHM*/
+#divRenekton {
+    float: right ;
+    padding: 10px ;
+    margin: 30px 0px 10px 20px ;  /* T R B L */
+}
+#divRenekton p:first-child {
+    text-align: right ;
+}
+
+#divRenekton p:first-child img {
+    border: 1px solid black ;
+}
+
+
+/*Target the First Title of h1 only*/
+.bannerWord {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em 15px;
+    color: #fff;
+    background-color: #069;
+    margin: 0;
+
+}
+
+
+/*Header Style*/
+h2, h3{
+    font-family:"Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+
+    color:#069;
+}
+
+h2{
+    font-size: large;
+    font-weight: normal;
+
+}
+
+
+h3{
+    font-size: large;
+    font-weight: normal;
+}
+
+/*------------------------------------------------------------*/
+
+/*Set the properties of the left div. */
+#left{
+    float: left;
+}
+

@@ -1,10 +1,70 @@
 <!DOCTYPE html>
+<!--
+    Author: Cullin Lam clam@cs.uml.edu
+    Created: 2015-11-19
+    Updated: 2015-11-20
+            2015-11-20
+                - added tabs division
+
+    This web page is the 8th assignment for GUI Programming I COMP 4020 UMass Lowell.
+    It presents to the user a form which asks for 4 parameters and will generate a multiplication table based on
+    the given parameters. JQuery Validation plugin in is used to validate form input. Jquery UI is used to
+    create tabs and slider input
+-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jquery UI Mult Table</title>
-</head>
-<body>
+    <title>Creating an Interactive Dynamic Table</title>
+    <meta charset="utf-8">
+    <!-- Link to CSS for all webpages. -->
+    <link rel="stylesheet" type="text/css" href="css/tab.css">
 
+    <!-- Link to the CSS for jQueryUI tabs. It is the Cupertino theme from jQueryui.com. -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/cupertino/jquery-ui.css" />
+
+    <!-- Loads the jQuery library from the Google Content Delivery Network. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <!-- Loads the jQuery plugins for validation. -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+    <!-- Loads the javascript for the dynamic table. -->
+    <script src="js/mult_tab.js"></script>
+</head>
+<!-- Contents of the whole website is styled as followed: -->
+<body>
+<div id="header">
+    <div class = " bannerWord">
+        <div>
+            <h1> Using the jQuery Validation Plugin and jQueryUI Tabbed Widget</h1>
+        </div>
+    </div>
+</div>
+
+<h2>Please fill out the following.</h2>
+<!-- Prompt user for the start and end values for column and row respectively. -->
+<div id="left">
+    Start value for row: <br>
+    End value for row: <br>
+    Start value for column: <br>
+    End value for column: <br>
+</div>
+<!-- End of left div. -->
+<div id="inputs">
+    <form id="form" action="javascript:void(0)">
+        <input type="number" id="colStartVal" name="colStartVal" required> <br>
+        <input type="number" id="colEndVal"   name="colEndVal"   required> <br>
+        <input type="number" id="rowStartVal" name="rowStartVal" required> <br>
+        <input type="number" id="rowEndVal"   name="rowEndVal"   required> <br>
+        <button type="submit" id="create">Create</button>
+        <button type="button" id="delete">Delete Selected tabs</button>
+        <input type="button" value="Reset Form" onClick="this.form.reset()" />
+        <button id="clear" >Remove all the old tabs</button>
+    </form>
+</div>
+<!--Dynamic Tabs output-->
+<div id="myTabs">
+    <ul>
+        <li><a href="#inputs">Dynamic Tabs</a></li>
+    </ul>
+</div>
 </body>
 </html>
