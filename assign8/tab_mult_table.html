@@ -34,7 +34,7 @@
 <div id="header">
     <div class = " bannerWord">
         <div>
-            <h1> Using the jQuery Validation Plugin and jQueryUI Tabbed Widget</h1>
+            <h1> Using the jQuery Validation Plugin and jQueryUI Tabbed Widget & Slider</h1>
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
 <!-- End of left div. -->
 <div id="inputs">
     <form id="form" action="javascript:void(0)">
-        <input type="number" id="colStartVal" name="colStartVal" required> <br>
+        <input type="number" id="colStartVal" name="colStartVal" required > <br>
         <input type="number" id="colEndVal"   name="colEndVal"   required> <br>
         <input type="number" id="rowStartVal" name="rowStartVal" required> <br>
         <input type="number" id="rowEndVal"   name="rowEndVal"   required> <br>
@@ -70,7 +70,7 @@
     <script>$(function(){
         $("#colStartslider").slider({
             value: 1,
-            min: 0,
+            min: -100,
             max: 100,
             step: 1,
             slide: function (event, ui) {
@@ -79,7 +79,7 @@
         })
         $("#colEndslider").slider({
             value: 1,
-            min: 0,
+            min: -100,
             max: 100,
             step: 1,
             slide: function (event, ui) {
@@ -88,7 +88,7 @@
         });
         $("#rowStartslider").slider({
             value: 1,
-            min: 0,
+            min: -100,
             max: 100,
             step: 1,
             slide: function (event, ui) {
@@ -97,7 +97,7 @@
         });
         $("#rowEndslider").slider({
             value: 1,
-            min: 0,
+            min: -100,
             max: 100,
             step: 1,
             slide: function (event, ui) {

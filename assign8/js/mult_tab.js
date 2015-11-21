@@ -32,30 +32,25 @@ $(document).ready(function() {
         rules: {
             colStartVal: {
                 required: true,
-                digits: true
+                number: true,
+                range: [-100,100]
             },
             colEndVal: {
                 required: true,
-                digits: true,
-                greaterThanRowStart: true
+                number: true,
+                greaterThanRowStart: true,
+                range: [-100,100]
             },
             rowStartVal: {
                 required: true,
-                digits: true
+                number: true,
+                range: [-100,100]
             },
             rowEndVal: {
                 required: true,
-                digits: true,
-                greaterThanColStart: true
-            }
-        },
-        onkeyup: function(element) {
-            if ($('form').valid()) {
-                $('form').find(":submit").attr("disabled",
-                    false);
-            } else {
-                $('form').find(":submit").attr("disabled",
-                    true);
+                number: true,
+                greaterThanColStart: true,
+                range: [-100,100]
             }
         },
 
@@ -64,12 +59,31 @@ $(document).ready(function() {
          */
         errorClass: "my-error-class",
         validClass: "my-valid-class"
-
-        // convert divs into ui sliders
-
-
     });
 
+    // Moves slider when form input is recieved
+    $( "#colStartVal" ).change(function() {
+        curr_val = $("#colStartVal").val()
+        $("#colStartslider").slider("value",curr_val);
+    });
+
+    $( "#colEndVal" ).change(function() {
+        curr_val = $("#colEndVal").val()
+        $("#colEndslider").slider("value",curr_val);
+    });
+
+    $( "#rowStartVal" ).change(function() {
+        curr_val = $("#rowStartVal").val()
+        $("#rowStartslider").slider("value",curr_val);
+    });
+
+
+    $( "#rowEndVal" ).change(function() {
+        curr_val = $("#rowEndVal").val()
+        $("#rowEndslider").slider("value",curr_val);
+    });
+
+    // creates  table in new tab
     function crTable(nextTabNo) {
         // getting the four values
         // putting a "+" to treat the value as a number instead of string
@@ -130,8 +144,7 @@ $(document).ready(function() {
     $('#create').click(function() {
         // check for first time
         if (!$('form').valid()) {
-            $('form').find(":submit").attr("disabled", true);
-            return;
+            return false;
         }
         /* create a new tab with close button next to it
          * http://stackoverflow.com/questions/14357614/add-close-button-to-jquery-ui-tabs
