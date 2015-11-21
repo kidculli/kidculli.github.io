@@ -59,6 +59,53 @@
         <input type="button" value="Reset Form" onClick="this.form.reset()" />
         <button id="clear" >Remove all the old tabs</button>
     </form>
+
+    <div id="colStartslider"></div>
+    <div id="colEndslider"></div>
+    <div id="rowStartslider"></div>
+    <div id="rowEndslider"></div>
+    <!--
+    Create UI Sliders
+    -->
+    <script>$(function(){
+        $("#colStartslider").slider({
+            value: 1,
+            min: 0,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#colStartVal").val(ui.value)
+            }
+        })
+        $("#colEndslider").slider({
+            value: 1,
+            min: 0,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#colEndVal").val(ui.value)
+            }
+        });
+        $("#rowStartslider").slider({
+            value: 1,
+            min: 0,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#rowStartVal").val(ui.value)
+            }
+        });
+        $("#rowEndslider").slider({
+            value: 1,
+            min: 0,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#rowEndVal").val(ui.value)
+            }
+        });
+    });</script>
+
 </div>
 <!--Dynamic Tabs output-->
 <div id="myTabs">

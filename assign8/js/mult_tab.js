@@ -64,6 +64,10 @@ $(document).ready(function() {
          */
         errorClass: "my-error-class",
         validClass: "my-valid-class"
+
+        // convert divs into ui sliders
+
+
     });
 
     function crTable(nextTabNo) {
