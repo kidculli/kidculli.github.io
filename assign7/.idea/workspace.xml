@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="004a0439-b60f-4e5c-9fcb-64f60bfcacfc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/js/mult_tab.js" afterPath="$PROJECT_DIR$/../assign8/js/mult_tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/tab_mult_table.html" afterPath="$PROJECT_DIR$/../assign8/tab_mult_table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/css/tab.css" afterPath="$PROJECT_DIR$/../assign8/css/tab.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../assign8/.idea/workspace.xml" />
     </list>
     <ignored path="assign7.iws" />
