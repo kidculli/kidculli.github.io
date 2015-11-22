@@ -4,8 +4,12 @@
  * Created by Cullin Lam clam@cs.uml.edu
  * on 11/19/15.
  *
- * Last Updated on 11/20/15
- *
+ * Last Updated on 11/21/15
+ *         11/21/15
+ *           - created function to reset slider pos
+ *         11/20/15
+ *          - added 2 way binding to sliders
+ *          - change form valid action to return false instead of disabling submit
  *
  *  This file holds all Javascript that runs the dynamic multiplication table
  *  found on kidculli.github.io/assign8/tab_mult_table.html
@@ -226,3 +230,13 @@ $(document).ready(function() {
 
 
 });
+
+// resets form input and sliders positions
+function reset_frm_sld()
+{
+    $("#colStartslider").slider("value",1);
+    $("#colEndslider").slider("value",1);
+    $("#rowStartslider").slider("value",1);
+    $("#rowEndslider").slider("value",1);
+
+};

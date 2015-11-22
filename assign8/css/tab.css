@@ -1,7 +1,11 @@
 /*
 Author: Cullin Lam clam@cs.uml.edu
 Created: 2015-11-19
-Updated: 2015-11-20
+Last Updated: 2015-11-21
+
+    2015-11-21
+        -  removed float properties and added width properties for slider rows 
+    2015-11-20
         - removed nav styles
 
  This stylesheet styles tab_mult_table.html
@@ -124,8 +128,25 @@ h3{
 
 /*------------------------------------------------------------*/
 
-/*Set the properties of the left div. */
-#left{
-    float: left;
+
+
+
+.left {
+    display: inline-block;
 }
 
+.right {
+    float: right;
+}
+
+/* style form input labels */
+.input {
+    width: 250px;
+}
+
+#sliders {
+    width: 250px;
+}
+.sliderrow {
+    width: 250px;
+}

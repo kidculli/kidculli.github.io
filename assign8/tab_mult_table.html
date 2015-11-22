@@ -2,9 +2,12 @@
 <!--
     Author: Cullin Lam clam@cs.uml.edu
     Created: 2015-11-19
-    Updated: 2015-11-20
+    Updated: 2015-11-21
+            2015-11-21
+                -used table to align slider pos and from input
             2015-11-20
                 - added tabs division
+                - added sliders and inline javascript
 
     This web page is the 8th assignment for GUI Programming I COMP 4020 UMass Lowell.
     It presents to the user a form which asks for 4 parameters and will generate a multiplication table based on
@@ -41,29 +44,68 @@
 
 <h2>Please fill out the following.</h2>
 <!-- Prompt user for the start and end values for column and row respectively. -->
-<div id="left">
-    Start value for row: <br>
-    End value for row: <br>
-    Start value for column: <br>
-    End value for column: <br>
-</div>
+<!--<div id="left">-->
+    <!--Start value for row: <br>-->
+    <!--End value for row: <br>-->
+    <!--Start value for column: <br>-->
+    <!--End value for column: <br>-->
+<!--</div>-->
 <!-- End of left div. -->
 <div id="inputs">
-    <form id="form" action="javascript:void(0)">
-        <input type="number" id="colStartVal" name="colStartVal" required > <br>
-        <input type="number" id="colEndVal"   name="colEndVal"   required> <br>
-        <input type="number" id="rowStartVal" name="rowStartVal" required> <br>
-        <input type="number" id="rowEndVal"   name="rowEndVal"   required> <br>
+    <form id="form" action="javascript:void(0)" class="left">
+        <table>
+            <tr>
+                <td>
+                    <p class="input">
+                        Start value for col:
+                        <input type="number" id="colStartVal" name="colStartVal" value="1" required > <br>
+                    </p>
+                </td>
+                <td class="sliderrow">
+                    <div id="colStartslider"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="input">
+                        End value for col:
+                        <input type="number" id="colEndVal"   name="colEndVal"   value="1" required> <br>
+                    </p>
+                </td>
+                <td class="sliderrow">
+                    <div id="colEndslider"></div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p class="input">
+                        Start value for row:
+                        <input type="number" id="rowStartVal" name="rowStartVal" value="1" required> <br>
+                    </p>
+                </td>
+                <td>
+                    <div id="rowStartslider"></div>
+                </td>
+            </tr>
+            <tr>
+               <td>
+                    <p class="input">
+                        End value for row:
+                        <input type="number" id="rowEndVal"   name="rowEndVal"   value="1" required> <br>
+                    </p>
+                </td>
+                <td>
+                    <div id="rowEndslider"></div>
+                </td>
+            </tr>
+        </table>
         <button type="submit" id="create">Create</button>
         <button type="button" id="delete">Delete Selected tabs</button>
-        <input type="button" value="Reset Form" onClick="this.form.reset()" />
+        <input type="button" value="Reset Form" onClick="this.form.reset(); reset_frm_sld();" />
         <button id="clear" >Remove all the old tabs</button>
     </form>
 
-    <div id="colStartslider"></div>
-    <div id="colEndslider"></div>
-    <div id="rowStartslider"></div>
-    <div id="rowEndslider"></div>
     <!--
     Create UI Sliders
     -->
