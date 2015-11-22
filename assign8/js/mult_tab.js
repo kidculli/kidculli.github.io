@@ -6,6 +6,7 @@
  *
  * Last Updated on 11/21/15
  *         11/21/15
+ *           - moved inline javaScript into this file from html
  *           - created function to reset slider pos
  *         11/20/15
  *          - added 2 way binding to sliders
@@ -64,6 +65,46 @@ $(document).ready(function() {
         errorClass: "my-error-class",
         validClass: "my-valid-class"
     });
+
+    // initialize sliders
+    $(function(){
+        $("#colStartslider").slider({
+            value: 1,
+            min: -100,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#colStartVal").val(ui.value)
+            }
+        })
+        $("#colEndslider").slider({
+            value: 1,
+            min: -100,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#colEndVal").val(ui.value)
+            }
+        });
+        $("#rowStartslider").slider({
+            value: 1,
+            min: -100,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#rowStartVal").val(ui.value)
+            }
+        });
+        $("#rowEndslider").slider({
+            value: 1,
+            min: -100,
+            max: 100,
+            step: 1,
+            slide: function (event, ui) {
+                $("#rowEndVal").val(ui.value)
+            }
+        });
+    })
 
     // Moves slider when form input is recieved
     $( "#colStartVal" ).change(function() {

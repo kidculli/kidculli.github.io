@@ -43,14 +43,7 @@
 </div>
 
 <h2>Please fill out the following.</h2>
-<!-- Prompt user for the start and end values for column and row respectively. -->
-<!--<div id="left">-->
-    <!--Start value for row: <br>-->
-    <!--End value for row: <br>-->
-    <!--Start value for column: <br>-->
-    <!--End value for column: <br>-->
-<!--</div>-->
-<!-- End of left div. -->
+
 <div id="inputs">
     <form id="form" action="javascript:void(0)" class="left">
         <table>
@@ -102,51 +95,10 @@
         </table>
         <button type="submit" id="create">Create</button>
         <button type="button" id="delete">Delete Selected tabs</button>
+        <!-- onClick reset form and slider positions  -->
         <input type="button" value="Reset Form" onClick="this.form.reset(); reset_frm_sld();" />
         <button id="clear" >Remove all the old tabs</button>
     </form>
-
-    <!--
-    Create UI Sliders
-    -->
-    <script>$(function(){
-        $("#colStartslider").slider({
-            value: 1,
-            min: -100,
-            max: 100,
-            step: 1,
-            slide: function (event, ui) {
-                $("#colStartVal").val(ui.value)
-            }
-        })
-        $("#colEndslider").slider({
-            value: 1,
-            min: -100,
-            max: 100,
-            step: 1,
-            slide: function (event, ui) {
-                $("#colEndVal").val(ui.value)
-            }
-        });
-        $("#rowStartslider").slider({
-            value: 1,
-            min: -100,
-            max: 100,
-            step: 1,
-            slide: function (event, ui) {
-                $("#rowStartVal").val(ui.value)
-            }
-        });
-        $("#rowEndslider").slider({
-            value: 1,
-            min: -100,
-            max: 100,
-            step: 1,
-            slide: function (event, ui) {
-                $("#rowEndVal").val(ui.value)
-            }
-        });
-    });</script>
 
 </div>
 <!--Dynamic Tabs output-->
