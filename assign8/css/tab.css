@@ -4,7 +4,7 @@ Created: 2015-11-19
 Last Updated: 2015-11-21
 
     2015-11-21
-        -  removed float properties and added width properties for slider rows 
+        -  removed float properties and added width properties for slider rows
     2015-11-20
         - removed nav styles
 
@@ -149,4 +149,8 @@ h3{
 }
 .sliderrow {
     width: 250px;
+}
+.my-error-class {
+    display: block;
+    color: red;
 }
