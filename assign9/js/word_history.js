@@ -8,14 +8,22 @@
  * Last Updated 12/10/15
  *  -Added Total score var
  *  - Added Total score counter to bottom of table
+ *  - added error checking onsubmit
  */
 
 // Accesses current word array and appends it to history table
 
 var total_score=0;
 
+// submit curr word
 function submit_word()
 {
+    //check word to see if it is not empty
+    if (!check_word()) {
+        // write error message
+        $('#curr_word').html('<p style="color: red ">Make a word by placing tiles on the board</p>');
+        return;
+    }
     // get the word into a string format
     var word = '';
     for(var i = 0 ; i < curr_word.length; i++)
@@ -35,4 +43,16 @@ function submit_word()
     $('#t_end').before(row);
     $('#t_score').html(total_score);
     Deal();
+}
+
+// check curr word to see if its not empty
+function check_word() {
+    for (var i = 0; i < curr_word.length; i++) {
+        if (curr_word[i] !== ' ') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
