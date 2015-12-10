@@ -15,7 +15,8 @@
  *      - created a new score function which does not depend on drag and drop to
  *        calculate score but uses the global curr_word instead
  *      - added spaces as default element in curr_word
- *
+ *         - added reset game method
+ *         - add nbsp for word holder
  */
 
 
@@ -183,6 +184,9 @@ function Deal() {
 
     //Reset Curr Word
     reset_curr_word();
+
+    //Display empty line
+    $('#curr_word').html("&nbsp");
 }
 ;
 // new scoring function using curr_word
@@ -258,5 +262,19 @@ function UnScoring(tile) {
     Score -= letterscore;
 
     $("#score").html(Score);
+
+}
+//reset the game
+function reset_game()
+{
+    //reset tiles
+    Bag = ResetBag();
+    //reset Table
+    $('.dynamic_row').remove()
+    // reset total_Score
+    total_score = 0;
+    $('#t_score').html('0');
+    // deal new hand
+    Deal();
 
 }
