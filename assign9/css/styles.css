@@ -1,0 +1,191 @@
+/*Author: Cullin Lam clam@cs.uml.edu*/
+/*Created: 12/18/15*/
+/*File: styles.css*/
+
+
+body {
+    background-color: white;
+    background-image: url("http://weblab.cs.uml.edu/~anevers/imgs/tree_bark.png")
+}
+
+/* background image from www.subtlepatterns.com */
+
+p, input {
+    color: black;
+    text-align: left;
+    font-size: 12pt;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 2px 0 2px ;
+    /*text-indent: 10px;*/
+}
+
+input[type=number]{
+    width: 50px;
+}
+
+blockquote {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 11pt;
+    margin: 10px 50px 10px 50px ;
+    padding: 10px 10px 10px 15px ;
+    border-left: 3px solid #cccccc;
+    background: #f9f9f9;
+    text-indent: 25px ;
+}
+
+ul{
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3 {
+    color: #303030;
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-indent: 4px;
+}
+.post{
+    background: rgba(255, 255, 255, .7);
+    padding: 10px 20px 15px 20px ;
+    border-radius: 25px ;
+    border: 2px solid white ;
+}
+
+/* sidebar modified from source here: http://jsfiddle.net/ShawnGSweeney/BqJDW/1/ */
+
+.sideBar {
+    position: fixed;
+    z-index: 250;
+}
+.sideBar.boxLeft {
+    width: 150px;
+    float:left;
+    padding: 10px 10px 10px 10px;
+    left:75px;
+    background-color: #E6E6E6;
+    top:10%;
+    opacity: .9;
+    border-radius: 20px;
+    border: 1px solid white ;
+}
+/* end sidebar */
+
+
+/* nav bar styling */
+/* nav bar css learned/tweaked from w3schools tutorial here: http://www.w3schools.com/css/css_navbar.asp */
+ul.nav {
+    list-style-type: none;
+    margin: 0 auto;
+    padding-bottom: 0;
+    text-align: center ;
+    position: relative;
+    display: inline ;
+}
+li.nav {
+    padding: 0 0px 0 16px ;
+
+}
+a.nav:link, a.nav:visited {
+    display: block;
+    width: 110px;
+    color: #FFFFFF;
+    background-color: #E6B8B8;
+    text-align: center;
+    padding: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500 ;
+}
+a.nav:hover, a.nav:active {
+    background-color: #B89393;
+}
+/* end nav bar styling */
+
+a:link:not(.nav) {
+    color: #E6B8B8;
+}
+a:hover:not(.nav), a:active:not(.nav) {
+    color: #B89393;
+}
+
+/* start of body containter footer styles */
+/*  css for sticky footer is from http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ tutorial
+*/
+
+.errors{
+    font-size: 12pt;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic ;
+    color: black ;
+}
+
+
+html, body, #container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body > #container {
+    height: auto;
+    min-height: 100%;
+}
+
+#content {
+    padding-left: 320px;
+    padding-right: 75px;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+#footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    margin-top: -3em;
+}
+#footer {
+    background-color: #1A1414;
+    color: white;
+    font-size: 9pt;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300 ;
+}
+
+/* begin table styles */
+
+table {
+    width:100%;
+    border: 1px solid white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+table th{
+    background-color: black;
+    color: white;
+}
+
+table tr{
+    text-align:center;
+}
+
+table tr:nth-of-type(1) th:nth-of-type(1) {
+    visibility: hidden;
+}
+
+table tr:nth-child(even){
+    background-color:#eee;
+}
+
+#delete{
+
+    color: black;
+    text-align: left;
+    font-size: 12pt;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 2px 0 2px ;
+    text-align: right ;
+}
