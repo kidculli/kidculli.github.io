@@ -170,6 +170,16 @@ function Deal() {
     //it is no longer the first deal
     FirstDeal = 1;
 
+    reset_ui_score_curr_word();
+
+    //update the table
+    build_table();
+
+
+};
+
+//resets ui score and curr word
+function reset_ui_score_curr_word() {
     // reset Drag and Drop
     DragAndDrop();
 
@@ -179,16 +189,13 @@ function Deal() {
     //we have to rewrite the score on the page to zero
     $("#score").html(Score);
 
-    //update the table
-    build_table();
-
     //Reset Curr Word
     reset_curr_word();
 
     //Display empty line
     $('#curr_word').html("&nbsp");
 }
-;
+
 // new scoring function using curr_word
 function new_score()
 {
@@ -277,4 +284,13 @@ function reset_game()
     // deal new hand
     Deal();
 
+}
+//recall pieces back to hand
+//source http://stackoverflow.com/questions/9398870/remove-css-top-and-left-attributes-with-jquery
+function recall() {
+    $('.draggable').css({
+        'top': '',
+        'left': ''
+    });
+    reset_ui_score_curr_word();
 }
