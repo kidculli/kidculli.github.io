@@ -147,7 +147,7 @@ else {
     Score = 0;
 
     //we have to rewrite the score on the page to zero
-    $("#score").html("<p>Score: " + Score + "<p>");
+    $("#score").html(Score);
 
     //update the table
     build_table();

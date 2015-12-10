@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="004a0439-b60f-4e5c-9fcb-64f60bfcacfc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/css/tab.css" afterPath="$PROJECT_DIR$/../assign8/css/tab.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../assign8/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../assign8/.idea/workspace.xml" />
     </list>
     <ignored path="assign7.iws" />
@@ -34,17 +33,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mult_table.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mult_table.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/mult_table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="1.7115384">
               <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assign_7.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="assign_7.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/assign_7.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -607,14 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/mult_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/validate__mult_table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.125">
@@ -627,6 +618,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mult_table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7115384">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
           <folding />
         </state>
       </provider>

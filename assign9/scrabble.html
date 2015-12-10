@@ -19,8 +19,12 @@
 <head>
     <meta charset="UTF-8">
     <title>GUI I Assignment 9: Scrabble</title>
-    <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/scrabble.css" media="screen" />
+    <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/scrabble.css" media="screen"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic);
     </style>
@@ -40,48 +44,52 @@
 <body>
 <!--&lt;!&ndash; nav bar stuff &ndash;&gt;-->
 <!--<div class="sideBar boxLeft">-->
-    <!--<div>-->
-        <!--<ul class="nav">-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/index.html">Index</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/part5/hw5.html">HW5</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/part6/hw6.html">HW6</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/part7/hw4.html">HW7</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/part8/hw8.html">HW8</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/part9/hw9.html">HW9</a></li>-->
-            <!--<li class="nav"><a class="nav" href="/~anevers/contact.html">Contact</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+<!--<div>-->
+<!--<ul class="nav">-->
+<!--<li class="nav"><a class="nav" href="/~anevers/index.html">Index</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/part5/hw5.html">HW5</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/part6/hw6.html">HW6</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/part7/hw4.html">HW7</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/part8/hw8.html">HW8</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/part9/hw9.html">HW9</a></li>-->
+<!--<li class="nav"><a class="nav" href="/~anevers/contact.html">Contact</a></li>-->
+<!--</ul>-->
+<!--</div>-->
 <!--</div>-->
 
 <!--&lt;!&ndash; end nav bar &ndash;&gt;-->
 
-<div id="container">
-    <div id="content">
+<div id="container" class="jumbotron">
+    <div id="content" class="container">
         <div class="post">
 
             <h1>Scrabble Mini Game</h1>
 
             <!-- board with tiles -->
 
-            <div id ="board">
+            <div id="board">
 
                 <div id="0" class="droppable">
                     <img src="img/triple_word_square.png" alt="tripleword">
                 </div>
                 <div id="1" class="droppable">
-                <img src="img/plain_square.png" alt="plain">
-            </div>
+                    <img src="img/plain_square.png" alt="plain">
+                </div>
                 <div id="2" class="droppable">
-                <img src="img/plain_square.png" alt="plain">
-            </div><div id="3" class="droppable">
-                <img src="img/plain_square.png" alt="plain">
-            </div><div id="4" class="droppable">
-                <img src="img/double_letter_square.png" alt="doubleletter">
-            </div><div id="5" class="droppable">
-                <img src="img/plain_square.png" alt="plain">
-            </div><div id="6" class="droppable">
-                <img src="img/plain_square.png" alt="plain">
-            </div>
+                    <img src="img/plain_square.png" alt="plain">
+                </div>
+                <div id="3" class="droppable">
+                    <img src="img/plain_square.png" alt="plain">
+                </div>
+                <div id="4" class="droppable">
+                    <img src="img/double_letter_square.png" alt="doubleletter">
+                </div>
+                <div id="5" class="droppable">
+                    <img src="img/plain_square.png" alt="plain">
+                </div>
+                <div id="6" class="droppable">
+                    <img src="img/plain_square.png" alt="plain">
+                </div>
 
             </div>
 
@@ -92,11 +100,12 @@
 
             <div id="rack">
             </div>
-
+            <div>
+                <span class="label label-default">WORD</span>
             <div id="curr_word"></div>
-
-            <div id="score">
-
+            </div>
+            <div>
+                <span class="label label-default">SCORE</span> <div id="score"></div>
             </div>
             <!-- style the score tracker better later -->
 
@@ -108,28 +117,34 @@
             <button onclick="submit_word()">Submit</button>
 
         </div>
+        <!--
+    table for remaining tiles
+    -->
+        <div class="row">
+            <div class="col-md-6">
+                <table id="tbl">
+                    <tr>
+                        <th>Tile</th>
+                        <th>Value</th>
+                        <th>Number<br>Remaining</th>
+                    </tr>
+                </table>
+            </div>
+            <!--
+                table for word submit history
+            -->
+            <div class="col-md-6">
+                <table id="history">
+                    <tr>
+                        <th>Word</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
-<!--
-    table for remaining tiles
-    -->
-<table id="tbl">
-    <tr>
-        <th>Tile</th>
-        <th>Value</th>
-        <th>Number<br>Remaining</th>
-    </tr>
-</table>
 
-<!--
-    table for word submit history
--->
-<table id="history">
-    <tr>
-        <th>Word</th>
-        <th>Score</th>
-    </tr>
-</table>
 </body>
 </html>
