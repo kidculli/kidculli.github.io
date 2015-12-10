@@ -14,6 +14,7 @@
  *  Updated 12/10/15
  *      - created a new score function which does not depend on drag and drop to
  *        calculate score but uses the global curr_word instead
+ *      - added spaces as default element in curr_word
  *
  */
 
@@ -67,7 +68,7 @@ var FirstDeal = 0; //is it the first deal? 0=yes, 1=no
 //Keeps track of word score
 var Score = 0;
 // array that holds characters of current word initialized with 7 blank chars
-var curr_word = ['', '', '', '', '', '', ''];
+var curr_word = [' ', ' ', ' ', ' ', ' ', ' ', ' '];
 
 //set drag and drop feature
 function DragAndDrop() {
@@ -118,7 +119,7 @@ function DragAndDrop() {
             // get index of Scrabble tile
             var index = $(this).attr('id');
             // set letter in curr word to empty string and redisplay
-            curr_word[index]="";
+            curr_word[index]=" ";
             display_curr_word();
             new_score();
         }
@@ -194,7 +195,7 @@ function new_score()
     {
         letter_score=0;
         letter = curr_word[i];
-        if(letter!=='')
+        if(letter!==' ')
         {
             letter_score=ScrabbleTiles[letter]['value'];
         }
@@ -244,7 +245,7 @@ function display_curr_word() {
 };
 // reset curr word array and remove display
 function reset_curr_word() {
-    curr_word = ['', '', '', '', '', '', ''];
+    curr_word = [' ', ' ', ' ', ' ', ' ', ' ', ' '];
     $("#curr_word").html("");
 }
 
