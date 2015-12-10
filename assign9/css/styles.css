@@ -16,7 +16,7 @@ p, input {
     font-size: 12pt;
     font-family: 'Source Sans Pro', sans-serif;
     padding: 0 2px 0 2px ;
-    /*text-indent: 10px;*/
+
 }
 
 input[type=number]{
