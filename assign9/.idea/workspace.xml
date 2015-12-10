@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae8496b4-9a6d-4ebe-b526-686d4c482e38" name="Default" comment="recall pieces and rest ui funct">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrabble.html" afterPath="$PROJECT_DIR$/scrabble.html" />
+    <list default="true" id="ae8496b4-9a6d-4ebe-b526-686d4c482e38" name="Default" comment="erro check onsubmit">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/word_history.js" afterPath="$PROJECT_DIR$/js/word_history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,7 +27,7 @@
       <file leaf-file-name="scrabble.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrabble.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.833333">
+            <state vertical-scroll-proportion="-1.0416666">
               <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
               <folding />
             </state>
@@ -58,10 +57,11 @@
       <file leaf-file-name="word_history.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/word_history.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20428015">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.5252918">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
-                <marker date="1449790439000" expanded="true" signature="603:614" placeholder="..." />
+                <marker date="1449791875000" expanded="true" signature="1582:1593" placeholder="..." />
+                <marker date="1449791875000" expanded="true" signature="1805:1816" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -375,7 +375,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449789244039</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="erro check onsubmit">
+      <created>1449790454840</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1449790454840</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -424,7 +430,8 @@
     <MESSAGE value="table heading fix" />
     <MESSAGE value="made major changes to deal and reset game" />
     <MESSAGE value="recall pieces and rest ui funct" />
-    <option name="LAST_COMMIT_MESSAGE" value="recall pieces and rest ui funct" />
+    <MESSAGE value="erro check onsubmit" />
+    <option name="LAST_COMMIT_MESSAGE" value="erro check onsubmit" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -461,7 +468,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
-            <marker date="1449790439000" expanded="true" signature="603:614" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1582:1593" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1805:1816" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -527,7 +535,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
-            <marker date="1449790439000" expanded="true" signature="603:614" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1582:1593" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1805:1816" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -670,7 +679,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrabble.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.833333">
+        <state vertical-scroll-proportion="-1.0416666">
           <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
           <folding />
         </state>
@@ -678,10 +687,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/word_history.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20428015">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.5252918">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding>
-            <marker date="1449790439000" expanded="true" signature="603:614" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1582:1593" placeholder="..." />
+            <marker date="1449791875000" expanded="true" signature="1805:1816" placeholder="..." />
           </folding>
         </state>
       </provider>

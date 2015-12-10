@@ -13,28 +13,24 @@
 
 // Accesses current word array and appends it to history table
 
-var total_score=0;
+var total_score = 0;
 
 // submit curr word
-function submit_word()
-{
-    //check word to see if it is not empty
+function submit_word() {
+    //check word to see if it is submittable
     if (!check_word()) {
-        // write error message
-        $('#curr_word').html('<p style="color: red ">Make a word by placing tiles on the board</p>');
         return;
     }
     // get the word into a string format
     var word = '';
-    for(var i = 0 ; i < curr_word.length; i++)
-    {
-        word+= curr_word[i];
+    for (var i = 0; i < curr_word.length; i++) {
+        word += curr_word[i];
     }
 
     // increment total score
     total_score += Score;
     // create row
-    var row ="<tr class='dynamic_row'> <td>" + word + "</td><td>" + $("#score").html() + "</td> </tr>";
+    var row = "<tr class='dynamic_row'> <td>" + word + "</td><td>" + $("#score").html() + "</td> </tr>";
     // Source Stack overflow for appending to last row
     //$('#history').find('tbody:last').append(row);
     //console.log($('#history').find('tbody:last').html());
@@ -45,14 +41,26 @@ function submit_word()
     Deal();
 }
 
-// check curr word to see if its not empty
+// check word to see if has spaces inside word or is empty
 function check_word() {
+    var word = '';
+    // get string version of word
     for (var i = 0; i < curr_word.length; i++) {
-        if (curr_word[i] !== ' ') {
-            return true;
-        }
-        else {
-            return false;
-        }
+        word += curr_word[i];
     }
+    //trim leading and trailing whitespace
+    word = word.trim();
+    // check if empty
+    if (word == '') {
+        // write error message
+        $('#curr_word').html('<p style="color: red ">Make a word by placing tiles on the board</p>');
+        return false;
+    }
+    // check if has spaces
+    if (word.search(' ') !== -1) {
+        // write error message
+        $('#curr_word').html('<p style="color: red ">You cannot have spaces in your word</p>');
+        return false;
+    }
+    return true;
 }
