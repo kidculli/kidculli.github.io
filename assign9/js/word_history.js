@@ -15,4 +15,6 @@ function submit_word()
     // create row
     var row ="<tr> <td>" + word + "</td><td>" + $("#score").html() + "</td> </tr>";
     $('#history').find('tbody:last').append(row);
+
+    Deal();
 }
