@@ -11,6 +11,10 @@
  * - Utilizes some code from Alex Nevers, however I changed it a bit
  *  to work with the pieces array and bag.js and I added new methods
  *
+ *  Updated 12/10/15
+ *      - created a new score function which does not depend on drag and drop to
+ *        calculate score but uses the global curr_word instead
+ *
  */
 
 
@@ -48,6 +52,9 @@ $(document).ready(
 
             // Shuffle the bag
             shuffle(Bag);
+            // Reset Rack
+            $("#rack").html("");
+            return Bag;
         }
     });
 
@@ -88,7 +95,7 @@ function DragAndDrop() {
             //Get current letter
             var current_letter = $(ui.draggable).children("img").attr("alt");
             //give scoring the current letter we dropped
-            Scoring(current_letter, $(this).children("img").attr("alt"));
+            //Scoring(current_letter, $(this).children("img").attr("alt"));
 
             $(this).droppable('option', 'accept', ui.draggable);
 
@@ -100,17 +107,20 @@ function DragAndDrop() {
             curr_word[parseInt(index)] = current_letter;
             // display word
             display_curr_word();
+            //score word
+            new_score();
 
         },
         // decrement points if tile removed, and fix curr word
         out: function (event, ui) {
             $(this).droppable('option', 'accept', '.draggable');
-            UnScoring($(ui.draggable).children("img").attr("alt"));
+            //UnScoring($(ui.draggable).children("img").attr("alt"));
             // get index of Scrabble tile
             var index = $(this).attr('id');
             // set letter in curr word to empty string and redisplay
             curr_word[index]="";
             display_curr_word();
+            new_score();
         }
 
     });
@@ -174,6 +184,36 @@ function Deal() {
     reset_curr_word();
 }
 ;
+// new scoring function using curr_word
+function new_score()
+{
+    var score = 0;
+    var letter = '';
+    var letter_score = 0;
+    for(var i=0;i<7;i++)
+    {
+        letter_score=0;
+        letter = curr_word[i];
+        if(letter!=='')
+        {
+            letter_score=ScrabbleTiles[letter]['value'];
+        }
+        else {
+            continue;
+        }
+        if(i==0)
+        {
+            letter_score*=3;
+        }
+        if(i==4)
+        {
+            letter_score*=2;
+        }
+        score += letter_score;
+        Score = score;
+    }
+    $('#score').html(Score);
+}
 
 //score the game
 function Scoring(tile, square) {
