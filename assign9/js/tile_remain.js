@@ -1,5 +1,9 @@
 /**
- * Created by Cullin on 12/8/15.
+ * Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ * Copyright (c) 2015 by Jesse M. Heines.  All rights reserved.  May be freely
+ * copied or excerpted for educational purposes with credit to the author.
+ *
+ * This file builds current distribution table
  */
 
 

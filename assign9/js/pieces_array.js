@@ -1,13 +1,13 @@
 /**
- * Created by Cullin on 12/8/15.
- */
-/*  File:  /~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Pieces_AssociativeArray_Jesse.js
+ *  File:  /~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Pieces_AssociativeArray_Jesse.js
  *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
  *  Copyright (c) 2015 by Jesse M. Heines.  All rights reserved.  May be freely
  *    copied or excerpted for educational purposes with credit to the author.
  *  updated by JMH on November 21, 2015 at 10:27 AM
  *  updated by JMH on November 25, 2015 at 10:58 AM to add the blank tile
  *  updated by JMH on November 27, 2015 at 10:22 AM to add original-distribution
+ *
+ *  File contains Array of Objects for Scrabble tiles values and distribution
  */
 
 var ScrabbleTiles = [] ;

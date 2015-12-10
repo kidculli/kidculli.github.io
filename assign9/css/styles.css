@@ -1,14 +1,17 @@
-/*Author: Cullin Lam clam@cs.uml.edu*/
-/*Created: 12/18/15*/
-/*File: styles.css*/
+/*
+Author: Cullin Lam clam@cs.uml.edu
+Created: 12/18/15
+File: styles.css
+
+General purpose stylesheet
+*/
 
 
 body {
     background-color: white;
-    background-image: url("http://weblab.cs.uml.edu/~anevers/imgs/tree_bark.png")
 }
 
-/* background image from www.subtlepatterns.com */
+
 
 p, input {
     color: black;

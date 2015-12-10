@@ -1,8 +1,19 @@
 /**
+ * Author: Cullin Lam clam@cs.uml.edu
+ * File: rules.js
+ *
  * Created by Cullin on 12/8/15.
+ *
+ * This file contains some global variable declarations as well as functions
+ * that deal with basic game mechanics. Utilizes jquery ui plugin for
+ * draggable and droppable feature
+ *
+ * - Utilizes some code from Alex Nevers, however I changed it a bit
+ *  to work with the pieces array and bag.js and I added new methods
+ *
  */
 
-//
+
 //Deals the first hand of tiles on pageload
 $(document).ready(
     function () {
@@ -26,11 +37,11 @@ $(document).ready(
             Bag = [];
 
             // Iterate through all pieces
-            for(var i = 0; i < Object.keys(ScrabbleTiles).length; i++) {
+            for (var i = 0; i < Object.keys(ScrabbleTiles).length; i++) {
                 // Get letter
                 var char = String.fromCharCode(65 + i);
 
-                for(var j = 0; j < ScrabbleTiles[char]["original-distribution"]; j++) {
+                for (var j = 0; j < ScrabbleTiles[char]["original-distribution"]; j++) {
                     Bag.push(char);
                 }
             }
@@ -41,16 +52,17 @@ $(document).ready(
     });
 
 
-//global vairables
+//global variables
+// Array that contains all the scrabble pieces in a random order
 var Bag = [];
+//Boolean that keeps track if first deal or not
 var FirstDeal = 0; //is it the first deal? 0=yes, 1=no
-var letters = "";  //string to keep track of
-var Score = 0;  //score global
-var Droppped = 0;
-// array that holds characters of current word
-var curr_word = ['','','','','','',''];
+//Keeps track of word score
+var Score = 0;
+// array that holds characters of current word initialized with 7 blank chars
+var curr_word = ['', '', '', '', '', '', ''];
 
-//drag and drop stuff
+//set drag and drop feature
 function DragAndDrop() {
     $(".draggable").draggable({
         revert: 'invalid',
@@ -70,22 +82,27 @@ function DragAndDrop() {
                 of: $(this),
                 using: function (pos) {
                     $(this).animate(pos, 200, "linear");
-                }});
+                }
+            });
 
-            //give scoring the current letter we dropped
+            //Get current letter
             var current_letter = $(ui.draggable).children("img").attr("alt");
+            //give scoring the current letter we dropped
             Scoring(current_letter, $(this).children("img").attr("alt"));
 
             $(this).droppable('option', 'accept', ui.draggable);
-            // Update current word
+
+
             var index;
+            // get index position of scrabble board
             index = $(this).attr('id');
+            // Update current word with letter placed on board
             curr_word[parseInt(index)] = current_letter;
-            console.log(curr_word);
             // display word
             display_curr_word();
 
         },
+        // decrement points if tile removed
         out: function (event, ui) {
             $(this).droppable('option', 'accept', '.draggable');
             UnScoring($(ui.draggable).children("img").attr("alt"));
@@ -97,18 +114,20 @@ function DragAndDrop() {
 
 //deals letter tiles to player
 function Deal() {
-
-    console.log("Bag length:"+Bag.length);
+    // iterator
+    var j;
+    // Holds scrabble tile
     var temp_piece;
-    if (FirstDeal === 1)    //if its not the first deal, empty the rack before adding tiles
+    //if its not the first deal, empty the rack before adding tiles
+    if (FirstDeal === 1)
         $("#rack").html("");
 
-    // if there are less than 7 tiles left in the Bag
-    if (Bag.length < 7)
-    {
-        for (var j = 0; j< Bag.length; j++) {
-            temp_piece = PickPiece()
-            console.log(temp_piece);
+    // if there are less than 7 tiles left in the Bag deal whatever amount is left
+    if (Bag.length < 7) {
+        for (j = 0; j < Bag.length; j++) {
+            // take piece from Bag
+            temp_piece = PickPiece();
+            //Add piece image to rack
             $("#rack").append("<div class='draggable'>"
                 + "<img src='img/Scrabble_Tile_"
                 + temp_piece
@@ -118,10 +137,10 @@ function Deal() {
                 + "</div>");
         }
     }
-else {
-        for (var j = 0; j < 7; j++) {
-            temp_piece = PickPiece()
-            //console.log(temp_piece);
+    //Get 7 pieces
+    else {
+        for (j= 0; j < 7; j++) {
+            temp_piece = PickPiece();
             $("#rack").append("<div class='draggable'>"
                 + "<img src='img/Scrabble_Tile_"
                 + temp_piece
@@ -134,7 +153,7 @@ else {
     //it is no longer the first deal
     FirstDeal = 1;
 
-    //I dont know why but the drag and drop interface needs to be reimplented entirely after deal
+    // reset Drag and Drop
     DragAndDrop();
 
     //resets score to zero, because we just dealt and there are no words yet
@@ -163,42 +182,35 @@ function Scoring(tile, square) {
     else if (square === "tripleword") {
         Score += letterscore * 3;
     }
-    else{
-        Score+=letterscore;
+    else {
+        Score += letterscore;
     }
     //write the score on the page
     $("#score").html(Score);
 }
 ;
-
-function display_curr_word()
-{
+//Displays current word onto the page
+function display_curr_word() {
     var word_str = "";
-    for(var i=0;i<curr_word.length;i++)
-    {
-        word_str +=  curr_word[i];
+    for (var i = 0; i < curr_word.length; i++) {
+        word_str += curr_word[i];
     }
     $("#curr_word").html(word_str);
 };
-
-function reset_curr_word()
-{
-    curr_word = ['','','','','','',''];
+// reset curr word array and remove display
+function reset_curr_word() {
+    curr_word = ['', '', '', '', '', '', ''];
     $("#curr_word").html("");
 }
 
-function UnScoring(tile){
+// decrement score when tile is removed
+function UnScoring(tile) {
 
-    var letterscore = 0; //score of our current tile
+    // get value of tile
+    var letterscore = ScrabbleTiles[tile]["value"];
+    //decrement from score
+    Score -= letterscore;
 
-    for (var i = 0; i < 26; i++) {
-        if (tile === piecesarray[i]) {
-            letterscore = valuesarray[i];
-        }
-    }
-
-    Score = Score - letterscore ;
-
-    $("#score").html("<p>Score: " + Score + "<p>");
+    $("#score").html(Score);
 
 }

@@ -1,25 +1,31 @@
 /**
+ * Author: Cullin Lam clam@cs.uml.edu
+ * File: bag.js
  * Created by Cullin on 12/8/15.
+ * This file deals with functions that implement and deal with the Scrabble Bag of tiles.
+ *
+ * I got much of this code from Ramon Meza http://weblab.cs.uml.edu/~rmeza/scrabble/
+ * I updated it to work with the pieces_array.js from Jesse Heines
  */
-// Bag is the array that you will get your pieces from
 
 
-// ResetBag() will reset the bag with pieces and tile distribution
+// ResetBag() will reset the bag with pieces and tile distribution and returns a new Bag
         function ResetBag() {
             // Empty bag
             var Bag = [];
-            console.log(Object.keys(ScrabbleTiles).length);
+
             // Iterate through all pieces
             for (var i = 0; i < Object.keys(ScrabbleTiles).length; i++) {
-                //console.log(i);
+
                 // Get letter
                 if ( i < Object.keys( ScrabbleTiles ).length - 1 ) {
                     var char = String.fromCharCode(65 + i);
                 }
+                // Last value in Scrabble Tiles is '_'
                 else if ( i == Object.keys( ScrabbleTiles ).length -1 ) {
                     char = "_";
-                    console.log("Added _ to bag");
                 }
+                // Push tiles into Bag
                 for (var j = 0; j < ScrabbleTiles[char]["original-distribution"]; j++) {
                     Bag.push(char);
 
@@ -31,7 +37,6 @@
             build_table();
             // reset word
             reset_curr_word();
-            console.log(Bag.length);
             // Shuffle the bag
             shuffle(Bag);
             return Bag;
@@ -57,11 +62,6 @@ function PickPiece() {
 
     // Return piece
     return piece;
-}
-
-// PieceValue(letter) returns the value of 'letter'
-function PieceValue(letter) {
-    return ScrabbleTiles[letter]["value"];
 }
 
 // Wonderful shuffle function courtesy of http://bost.ocks.org/mike/shuffle/
