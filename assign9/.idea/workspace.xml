@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8496b4-9a6d-4ebe-b526-686d4c482e38" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rules.js" afterPath="$PROJECT_DIR$/js/rules.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tile_remain.js" afterPath="$PROJECT_DIR$/js/tile_remain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assign9.iws" />
@@ -27,18 +27,18 @@
       <file leaf-file-name="scrabble.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrabble.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.5">
-              <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+            <state vertical-scroll-proportion="-9.791667">
+              <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rules.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/rules.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36960986">
-              <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+            <state vertical-scroll-proportion="25.555555">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -74,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tile_remain.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tile_remain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/tile_remain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.14591439">
               <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
               <folding />
             </state>
@@ -127,11 +127,11 @@
         <option value="$PROJECT_DIR$/js/bag.js" />
         <option value="$PROJECT_DIR$/js/word_history.js" />
         <option value="$PROJECT_DIR$/js/pieces_array.js" />
-        <option value="$PROJECT_DIR$/js/tile_remain.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/scrabble.html" />
         <option value="$PROJECT_DIR$/css/scrabble.css" />
         <option value="$PROJECT_DIR$/js/rules.js" />
+        <option value="$PROJECT_DIR$/scrabble.html" />
+        <option value="$PROJECT_DIR$/js/tile_remain.js" />
       </list>
     </option>
   </component>
@@ -348,7 +348,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449762886589</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added spaces to curr word">
+      <created>1449763158943</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1449763158944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -393,7 +399,8 @@
     <MESSAGE value="added deal call after submit" />
     <MESSAGE value="added update curr word in out event" />
     <MESSAGE value="new_Score function" />
-    <option name="LAST_COMMIT_MESSAGE" value="new_Score function" />
+    <MESSAGE value="added spaces to curr word" />
+    <option name="LAST_COMMIT_MESSAGE" value="added spaces to curr word" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -584,14 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tile_remain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -624,6 +623,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="25.555555">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/scrabble.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -634,16 +641,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrabble.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.5">
-          <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+        <state vertical-scroll-proportion="-9.791667">
+          <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/rules.js">
+    <entry file="file://$PROJECT_DIR$/js/tile_remain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36960986">
-          <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.14591439">
+          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
           <folding />
         </state>
       </provider>

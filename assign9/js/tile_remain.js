@@ -4,6 +4,9 @@
  * copied or excerpted for educational purposes with credit to the author.
  *
  * This file builds current distribution table
+ *
+ * Updated by Cullin 12/9/15
+ *  - Initializes table with table heading
  */
 
 
@@ -19,7 +22,7 @@ function build_table()
 
         // Clear table if exists
 
-        $("#tbl").html("");
+        $("#tbl").html("<tr> <th>Tile</th> <th>Value</th> <th>Number<br>Remaining</th> </tr>");
 
         // populate table of tile values
         // note that an associative array is actually an object, so to get its length
