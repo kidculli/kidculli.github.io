@@ -29,6 +29,8 @@
             }
             // reset table
             build_table();
+            // reset word
+            reset_curr_word();
             console.log(Bag.length);
             // Shuffle the bag
             shuffle(Bag);

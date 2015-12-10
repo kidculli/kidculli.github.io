@@ -5,7 +5,15 @@
     Created: 12/8/15
 
     Html for scrabble application
+
     Utilized code from Alex Nevers http://weblab.cs.uml.edu/~anevers/part9/hw9.html
+    Utilized code from Jesse Heines for Table and pieces array
+
+    Last updated 12/9/15
+        added div id for droppable board spaces
+        added table for Tile distribution
+
+
 -->
 <html lang="en">
 <head>
@@ -24,8 +32,8 @@
     <script src="js/pieces_array.js"></script>
     <script src="js/tile_remain.js"></script>
     <script src="js/bag.js"></script>
-    <script src="js/rules.js">
-    </script>
+    <script src="js/rules.js"></script>
+    <script src="js/word_history.js"></script>
 
 </head>
 
@@ -88,7 +96,7 @@
             <div id="curr_word"></div>
 
             <div id="score">
-                <p>Score: 0</p>
+
             </div>
             <!-- style the score tracker better later -->
 
@@ -96,6 +104,8 @@
             <button onClick="Deal()">New Hand</button>
             <!-- Reshuffle the Bag -->
             <button onclick="Bag = ResetBag()">Reset Tiles</button>
+            <!-- Submit Word -->
+            <button onclick="submit_word()">Submit</button>
 
         </div>
     </div>
@@ -112,7 +122,14 @@
     </tr>
 </table>
 
-
-
+<!--
+    table for word submit history
+-->
+<table id="history">
+    <tr>
+        <th>Word</th>
+        <th>Score</th>
+    </tr>
+</table>
 </body>
 </html>

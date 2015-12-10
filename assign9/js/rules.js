@@ -87,6 +87,8 @@ function DragAndDrop() {
             index = $(this).attr('id');
             curr_word[parseInt(index)] = current_letter;
             console.log(curr_word);
+            // display word
+            display_curr_word();
 
         },
         out: function (event, ui) {
@@ -168,10 +170,25 @@ function Scoring(tile, square) {
         Score+=letterscore;
     }
     //write the score on the page
-    $("#score").html("<p>Score: " + Score + "<p>");
+    $("#score").html(Score);
 }
 ;
 
+function display_curr_word()
+{
+    var word_str = "";
+    for(var i=0;i<curr_word.length;i++)
+    {
+        word_str +=  curr_word[i];
+    }
+    $("#curr_word").html(word_str);
+};
+
+function reset_curr_word()
+{
+    curr_word = ['','','','','','',''];
+    $("#curr_word").html("");
+}
 
 function UnScoring(tile){
 
