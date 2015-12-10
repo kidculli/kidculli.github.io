@@ -102,10 +102,15 @@ function DragAndDrop() {
             display_curr_word();
 
         },
-        // decrement points if tile removed
+        // decrement points if tile removed, and fix curr word
         out: function (event, ui) {
             $(this).droppable('option', 'accept', '.draggable');
             UnScoring($(ui.draggable).children("img").attr("alt"));
+            // get index of Scrabble tile
+            var index = $(this).attr('id');
+            // set letter in curr word to empty string and redisplay
+            curr_word[index]="";
+            display_curr_word();
         }
 
     });
