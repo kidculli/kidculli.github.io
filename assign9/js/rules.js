@@ -135,6 +135,15 @@ function Deal() {
     var j;
     // Holds scrabble tile
     var temp_piece;
+    // Check tiles remaining
+    console.log(tiles_remaining);
+    if (tiles_remaining == 0) {
+        //write end message
+        var message = "No more tiles to deal, thank you for playing";
+        $('#curr_word').html('<p style="color:dodgerblue ">' + message + '</p>');
+        return;
+
+    }
     //if its not the first deal, empty the rack before adding tiles
     if (FirstDeal === 1)
         $("#rack").html("");

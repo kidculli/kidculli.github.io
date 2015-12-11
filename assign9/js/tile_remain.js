@@ -12,6 +12,8 @@
 
 // This function builds the tiles remaining table
 
+var tiles_remaining = 100;
+
 function build_table()
     {
         // define variables here to thwart hoisting
@@ -75,7 +77,7 @@ function build_table()
 
             // create a new table cell to hold the number of tiles remaining of the tile
             //    we're looking at
-            newTableCell = $("<td id='remain'></td>");
+            newTableCell = $("<td></td>");
             if ( k < Object.keys( ScrabbleTiles ).length ) {
                 // put the numer of tiles for the letter into the new table cell
                 // here we must use the 2-D array syntax because "number-remaining" contains a hyphen
@@ -88,10 +90,11 @@ function build_table()
                     "background-color" : "black",
                     "color" : "white" } ) ;
                 newTableCell.text( nTiles ) ;
+                tiles_remaining = nTiles;
             }
             // append the new table cell to the new table row
             newTableRow.append( newTableCell ) ;
-            $('#t_remain').html(newTableCell.text);
+            //$('#t_remain').html(newTableCell.text);
             // append the complete table row to the table
             $("#tbl").append( newTableRow ) ;
         }

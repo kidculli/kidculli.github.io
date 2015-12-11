@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae8496b4-9a6d-4ebe-b526-686d4c482e38" name="Default" comment="added dict">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrabble.html" afterPath="$PROJECT_DIR$/scrabble.html" />
+    <list default="true" id="ae8496b4-9a6d-4ebe-b526-686d4c482e38" name="Default" comment="added tabs and tile remain unused for main">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/rules.js" afterPath="$PROJECT_DIR$/js/rules.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tile_remain.js" afterPath="$PROJECT_DIR$/js/tile_remain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/word_history.js" afterPath="$PROJECT_DIR$/js/word_history.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assign9.iws" />
@@ -26,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scrabble.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scrabble.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrabble.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4117646">
+            <state vertical-scroll-proportion="0.30864197">
               <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -42,8 +41,10 @@
         <entry file="file://$PROJECT_DIR$/js/rules.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
+              <caret line="139" column="26" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+              <folding>
+                <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/js/word_history.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="68" selection-end-column="77" />
               <folding>
                 <marker date="1449800158000" expanded="true" signature="2019:2032" placeholder="..." />
                 <marker date="1449800158000" expanded="true" signature="2217:2228" placeholder="..." />
@@ -83,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tile_remain.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tile_remain.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tile_remain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1923077">
-              <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -136,11 +137,11 @@
         <option value="$PROJECT_DIR$/js/bag.js" />
         <option value="$PROJECT_DIR$/js/pieces_array.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/rules.js" />
         <option value="$PROJECT_DIR$/js/word_history.js" />
-        <option value="$PROJECT_DIR$/js/tile_remain.js" />
         <option value="$PROJECT_DIR$/css/scrabble.css" />
         <option value="$PROJECT_DIR$/scrabble.html" />
+        <option value="$PROJECT_DIR$/js/tile_remain.js" />
+        <option value="$PROJECT_DIR$/js/rules.js" />
       </list>
     </option>
   </component>
@@ -400,7 +401,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449794715152</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added tabs and tile remain unused for main">
+      <created>1449801922771</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1449801922771</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -452,7 +459,8 @@
     <MESSAGE value="erro check onsubmit" />
     <MESSAGE value="error check upgraded" />
     <MESSAGE value="added dict" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dict" />
+    <MESSAGE value="added tabs and tile remain unused for main" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tabs and tile remain unused for main" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -474,7 +482,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="31" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -545,7 +555,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +628,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="205" column="39" selection-start-line="205" selection-start-column="39" selection-end-line="205" selection-end-column="39" />
-          <folding />
+          <folding>
+            <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -687,7 +701,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,14 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bag.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -763,28 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/rules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrabble.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4117646">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/word_history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="68" selection-end-column="77" />
           <folding>
             <marker date="1449800158000" expanded="true" signature="2019:2032" placeholder="..." />
             <marker date="1449800158000" expanded="true" signature="2217:2228" placeholder="..." />
@@ -794,11 +784,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/tile_remain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1923077">
-          <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="26" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+          <folding>
+            <marker date="1449803446000" expanded="true" signature="4322:4339" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrabble.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30864197">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
