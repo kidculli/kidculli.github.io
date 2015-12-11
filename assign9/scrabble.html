@@ -13,6 +13,7 @@
         -added div id for droppable board spaces
         -added table for Tile distribution
         -added bootstrap classes
+        - added tabs
 
 
 -->
@@ -20,20 +21,26 @@
 <head>
     <meta charset="UTF-8">
     <title>GUI I Assignment 9: Scrabble</title>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+
     <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/scrabble.css" media="screen"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic);
     </style>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-    <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
     <script src="js/pieces_array.js"></script>
     <script src="js/tile_remain.js"></script>
     <script src="js/bag.js"></script>
@@ -44,73 +51,91 @@
 
 <body>
 
+<div id="content" class="container">
+    <div id="container" class="jumbotron">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#Game">Scrabble</a></li>
+            <li><a data-toggle="tab" href="#word_hist">Word History</a></li>
+            <li><a data-toggle="tab" href="#tile_dist">Tile Distribution</a></li>
+        </ul>
 
-<div id="container" class="jumbotron">
-    <div id="content" class="container">
-        <div class="post">
 
-            <h1>Scrabble Mini Game</h1>
+        <div class="tab-content">
+            <div id="Game" class="tab-pane fade in active">
 
-            <!-- board with tiles -->
+                <div class="post">
 
-            <div id="board">
+                    <h1>Scrabble Mini Game</h1>
 
-                <div id="0" class="droppable">
-                    <img src="img/triple_word_square.png" alt="tripleword">
-                </div>
-                <div id="1" class="droppable">
-                    <img src="img/plain_square.png" alt="plain">
-                </div>
-                <div id="2" class="droppable">
-                    <img src="img/plain_square.png" alt="plain">
-                </div>
-                <div id="3" class="droppable">
-                    <img src="img/plain_square.png" alt="plain">
-                </div>
-                <div id="4" class="droppable">
-                    <img src="img/double_letter_square.png" alt="doubleletter">
-                </div>
-                <div id="5" class="droppable">
-                    <img src="img/plain_square.png" alt="plain">
-                </div>
-                <div id="6" class="droppable">
-                    <img src="img/plain_square.png" alt="plain">
-                </div>
+                    <!-- board with tiles -->
 
+                    <div id="board">
+
+                        <div id="0" class="droppable">
+                            <img src="img/triple_word_square.png" alt="tripleword">
+                        </div>
+                        <div id="1" class="droppable">
+                            <img src="img/plain_square.png" alt="plain">
+                        </div>
+                        <div id="2" class="droppable">
+                            <img src="img/plain_square.png" alt="plain">
+                        </div>
+                        <div id="3" class="droppable">
+                            <img src="img/plain_square.png" alt="plain">
+                        </div>
+                        <div id="4" class="droppable">
+                            <img src="img/double_letter_square.png" alt="doubleletter">
+                        </div>
+                        <div id="5" class="droppable">
+                            <img src="img/plain_square.png" alt="plain">
+                        </div>
+                        <div id="6" class="droppable">
+                            <img src="img/plain_square.png" alt="plain">
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <!-- empty rack tiles get generated from document ready function -->
+
+                    <div id="rack">
+                    </div>
+                    <div>
+                        <div style="display: inline-block">
+                            <span class="label label-default">WORD</span>
+
+                            <div id="curr_word"></div>
+                        </div>
+                        <div>
+                            <span class="label label-default">SCORE</span>
+
+                            <div id="score"></div>
+                        </div>
+                        <div style>
+                            <span class="label label-default">TOTAL SCORE</span>
+
+                            <div id="t_score_main">0</div>
+                        </div>
+
+                        <!--  Reset Game -->
+                        <button onclick="reset_game()">Reset Game</button>
+                        <!-- Recall Hand -->
+                        <button onclick="recall()">Recall Pieces</button>
+                        <!-- Get New Hand -->
+                        <button onClick="Deal()">New Hand</button>
+                        <!-- Submit Word -->
+                        <button onclick="submit_word();">Submit Word</button>
+                    </div>
+
+                </div>
             </div>
 
-            <br>
-            <br>
+            <div id="word_hist" class="tab-pane fade in ">
 
-            <!-- empty rack tiles get generated from document ready function -->
-
-            <div id="rack">
-            </div>
-            <div>
-                <span class="label label-default">WORD</span>
-
-                <div id="curr_word"></div>
-            </div>
-            <div>
-                <span class="label label-default">SCORE</span>
-
-                <div id="score"></div>
-            </div>
-
-            <!--  Reset Game -->
-            <button onclick="reset_game()">Reset Game</button>
-            <!-- Recall Hand -->
-            <button onclick="recall()">Recall Pieces</button>
-            <!-- Get New Hand -->
-            <button onClick="Deal()">New Hand</button>
-            <!-- Submit Word -->
-            <button onclick="submit_word();">Submit Word</button>
-
-        </div>
-
-        <div class="row">
-            <!--table for word submit history-->
-            <div class="col-md-6">
+                <!--table for word submit history-->
+                <h3>Submitted Words</h3>
                 <table id="history">
                     <tr id="t_start">
                         <th>Word</th>
@@ -122,10 +147,13 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-md-6">
+
+
+            <div id="tile_dist" class="tab-pane fade in ">
+
                 <!--
-table for remaining tiles
--->
+        table for remaining tiles
+        -->
                 <table id="tbl">
                     <tr>
                         <th>Tile</th>
@@ -134,11 +162,9 @@ table for remaining tiles
                     </tr>
                 </table>
             </div>
-
         </div>
+
     </div>
 </div>
-
-
 </body>
 </html>

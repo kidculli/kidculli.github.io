@@ -10,6 +10,7 @@
  *  - Added Total score counter to bottom of table
  *  - added error checking onsubmit
  *  - Added dictionary checking
+ *  - Added success message
  */
 
 
@@ -60,7 +61,12 @@ function submit_word() {
         // append row
         $('#t_end').before(row);
         $('#t_score').html(total_score);
+        $('#t_score_main').html(total_score);
+        // deal new hand
         Deal();
+        // write success message
+        var message = word + " is a valid word"
+        $('#curr_word').html('<p style="color: green ">' + message + '</p>');
     }
     else {
         // write error message
